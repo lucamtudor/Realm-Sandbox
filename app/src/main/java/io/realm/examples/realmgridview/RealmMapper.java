@@ -18,7 +18,7 @@ public abstract class RealmMapper {
 
     @SuppressWarnings("unchecked")
     public <T extends RealmObject> RealmList<T> detachList(final RealmList<T> list) {
-        final T[] array = (T[]) new RealmObject[0];
+        final T[] array = (T[]) new RealmObject[list.size()];
         return new RealmList<>(list.toArray(array));
     }
 }
